@@ -7,7 +7,7 @@ let dBall = 15;
 let raio = dBall / 2;
 
 //Velocidade da Bola
-let vXBall = 8
+let vXBall = 8;
 let vYBall = 8;
 
 //Posição Raquete
@@ -16,7 +16,7 @@ let yRaquete = 150;
 
 //Tamanho Raquete
 let hRaquete = 90;
-let wRaquete = 10
+let wRaquete = 10;
 
 function setup() {
   createCanvas(600, 400);

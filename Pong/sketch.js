@@ -44,7 +44,8 @@ function draw() {
   moveRaquete();
   moveRaquete2();
   //colisionRaquete();
-  colisionGit();
+  colisionGit(xRaquete, yRaquete);
+  colisionGit(xRaquete2, yRaquete2);
 }
 
 function showBall() {
@@ -92,10 +93,10 @@ function colisionRaquete(){
   }
 }
 
-function colisionGit(){
+function colisionGit(x, y){
   //Utilizamos de uma biblioteca externa para colocarmos o parâmetro "collideRectCircle" que diz que se a bola colidir com a raquete sua velocidade inverte
 
-  hit = collideRectCircle(xRaquete, yRaquete, wRaquete, hRaquete, xBall, yBall, dBall);
+  hit = collideRectCircle(x, y, wRaquete, hRaquete, xBall, yBall, dBall);
   if(hit){
     vXBall *= -1
   }

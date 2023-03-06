@@ -18,6 +18,9 @@ let yRaquete = 150;
 let xRaquete2 = 585;
 let yRaquete2 = 150;
 
+//Movimento Raquete2
+let vYRaquete2;
+
 //Tamanho Raquete
 let hRaquete = 90;
 let wRaquete = 10;
@@ -39,6 +42,7 @@ function draw() {
   showRaquete(xRaquete, yRaquete);
   showRaquete(xRaquete2, yRaquete2);
   moveRaquete();
+  moveRaquete2();
   //colisionRaquete();
   colisionGit();
 }
@@ -75,6 +79,11 @@ function moveRaquete(){
     if (keyIsDown(DOWN_ARROW)){
     yRaquete += 10;
   }
+}
+
+function moveRaquete2(){
+  vYRaquete2 = yBall - yRaquete2 - wRaquete / 2 - 30;
+  yRaquete2 += vYRaquete2
 }
 
 function colisionRaquete(){

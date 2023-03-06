@@ -14,6 +14,10 @@ let vYBall = 8;
 let xRaquete = 5;
 let yRaquete = 150;
 
+//Posição Raquete 2
+let xRaquete2 = 585;
+let yRaquete2 = 150;
+
 //Tamanho Raquete
 let hRaquete = 90;
 let wRaquete = 10;
@@ -32,7 +36,8 @@ function draw() {
   showBall();
   moveBall();
   colisionBall();
-  showRaquete();
+  showRaquete(xRaquete, yRaquete);
+  showRaquete(xRaquete2, yRaquete2);
   moveRaquete();
   //colisionRaquete();
   colisionGit();
@@ -44,7 +49,7 @@ function showBall() {
 
 function moveBall() {
   xBall += vXBall; //Fazer a bola se mover horizontalmente, pois o x sera somado a cada momento
- // yBall += vYBall; //Fazer a bola se mover verticalmente, pois o y sera somado a cada momento
+  yBall += vYBall; //Fazer a bola se mover verticalmente, pois o y sera somado a cada momento
 }
 
 function colisionBall() {
@@ -59,8 +64,8 @@ function colisionBall() {
   }
 }
 
-function showRaquete(){
-  rect(xRaquete, yRaquete, wRaquete, hRaquete); //Desenhar um retângulo
+function showRaquete(x, y){
+  rect(x, y, wRaquete, hRaquete); //Desenhar um retângulo
 }
 
 function moveRaquete(){

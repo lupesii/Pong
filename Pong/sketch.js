@@ -28,6 +28,10 @@ let wRaquete = 10;
 //Biblioteca
 let hit = false
 
+//Placa
+let myP = 0;
+let yourP = 0;
+
 function setup() {
   createCanvas(600, 400);
 }
@@ -36,9 +40,12 @@ function setup() {
 function draw() {
   background(0);
   //Refatoração é o uso de funções para melhor identificarmos cada trecho de código.
+  
+  //Bola
   showBall();
   moveBall();
   colisionBall();
+  //Raquete
   showRaquete(xRaquete, yRaquete);
   showRaquete(xRaquete2, yRaquete2);
   moveRaquete();
@@ -46,6 +53,10 @@ function draw() {
   //colisionRaquete();
   colisionGit(xRaquete, yRaquete);
   colisionGit(xRaquete2, yRaquete2);
+  //Placar
+  showplacar();
+  pontos();
+  
 }
 
 function showBall() {
@@ -99,5 +110,20 @@ function colisionGit(x, y){
   hit = collideRectCircle(x, y, wRaquete, hRaquete, xBall, yBall, dBall);
   if(hit){
     vXBall *= -1
+  }
+}
+
+function showplacar(){
+  fill(255);
+  text(myP, 278, 26);
+  text(yourP, 321, 26);
+}
+
+function pontos(){
+  if(xBall > 590){
+    myP += 1
+  }
+  if(xBall < 10){
+    yourP += 1
   }
 }

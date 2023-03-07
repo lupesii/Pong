@@ -26,7 +26,7 @@ let hRaquete = 90;
 let wRaquete = 10;
 
 //Biblioteca
-let hit = false
+let hit = false;
 
 //Placar
 let myP = 0;
@@ -78,7 +78,7 @@ function colisionBall() {
   }
   
   if(yBall + raio > height || yBall -raio < 0){
-    vYBall *= -1
+    vYBall *= -1;
   }
 }
 
@@ -97,12 +97,12 @@ function moveRaquete(){
 
 function moveRaquete2(){
   vYRaquete2 = yBall - yRaquete2 - wRaquete / 2 - 30;
-  yRaquete2 += vYRaquete2
+  yRaquete2 += vYRaquete2;
 }
 
 function colisionRaquete(){
  if (xBall - raio < xRaquete + wRaquete && yBall - raio < yRaquete + hRaquete && yBall + raio > yRaquete){
-    vXBall *= -1
+    vXBall *= -1;
   }
 }
 
@@ -111,22 +111,30 @@ function colisionGit(x, y){
 
   hit = collideRectCircle(x, y, wRaquete, hRaquete, xBall, yBall, dBall);
   if(hit){
-    vXBall *= -1
+    vXBall *= -1;
   }
 }
 
 function showplacar(){
+  stroke(255);
+  textAlign(CENTER);
+  textSize(20);
+  fill(color(255, 140, 0));
+  rect(150, 10, 40, 20);
   fill(255);
-  text(myP, 278, 26);
-  text(yourP, 321, 26);
+  text(myP, 170, 26);
+  fill(color(255, 140, 0));
+  rect(450, 10, 40, 20);
+  fill(255);
+  text(yourP, 470, 26);
 }
 
 function pontos(){
   if(xBall > 590){
-    myP += 1
+    myP += 1;
   }
   if(xBall < 10){
-    yourP += 1
+    yourP += 1;
   }
 }
 

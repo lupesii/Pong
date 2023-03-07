@@ -28,7 +28,7 @@ let wRaquete = 10;
 //Biblioteca
 let hit = false
 
-//Placa
+//Placar
 let myP = 0;
 let yourP = 0;
 
@@ -56,7 +56,9 @@ function draw() {
   //Placar
   showplacar();
   pontos();
-  
+  //Jogabilidade
+  fimPong();
+  ReinicioPong();
 }
 
 function showBall() {
@@ -125,5 +127,27 @@ function pontos(){
   }
   if(xBall < 10){
     yourP += 1
+  }
+}
+
+function fimPong(){
+  if(myP >= 10 || yourP >= 10){
+    myP = 0;
+    yourP = 0;
+    xBall = 300;
+    yBall = 200;
+    vXBall = 0;
+    vYBall = 0;
+    xRaquete = 5;
+    yRaquete = 150;
+    xRaquete2 = 585;
+    yRaquete2 = 150;
+  }
+}
+
+function ReinicioPong(){
+  if( keyIsDown(LEFT_ARROW)){
+    vXBall = 8;
+    vYBall = 8;
   }
 }

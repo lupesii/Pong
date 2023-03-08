@@ -20,6 +20,7 @@ let yRaquete2 = 150;
 
 //Movimento Raquete2
 let vYRaquete2;
+let errorshot = 0;
 
 //Tamanho Raquete
 let hRaquete = 90;
@@ -32,8 +33,21 @@ let hit = false;
 let myP = 0;
 let yourP = 0;
 
+//Sons
+let trilha;
+let raquetada;
+let ponto;
+
+//Função para executar os sons
+function preload(){
+  trilha = loadSound("sounds/trilha.mp3");
+  raquetada = loadSound("sounds/raquetada.mp3");
+  ponto = loadSound("sounds/ponto.mp3");
+}
+
 function setup() {
   createCanvas(600, 400);
+  trilha.loop(); //Chamando o som "trilha" e colocando-o em loop
 }
 
 // Função para criar uma forma
@@ -45,17 +59,21 @@ function draw() {
   showBall();
   moveBall();
   colisionBall();
+  
   //Raquete
   showRaquete(xRaquete, yRaquete);
   showRaquete(xRaquete2, yRaquete2);
   moveRaquete();
   moveRaquete2();
+
   //colisionRaquete();
   colisionGit(xRaquete, yRaquete);
   colisionGit(xRaquete2, yRaquete2);
+
   //Placar
   showplacar();
   pontos();
+
   //Jogabilidade
   fimPong();
   ReinicioPong();
@@ -87,20 +105,39 @@ function showRaquete(x, y){
 }
 
 function moveRaquete(){
-    if (keyIsDown(UP_ARROW)){ //Se a tecla estiver apertada a raquete sobe ou desce
-    yRaquete -= 10;
+  //Se a tecla estiver apertada a raquete sobe ou desce
+
+    if (keyIsDown(UP_ARROW)){
+    yRaquete -= 10
   }
     if (keyIsDown(DOWN_ARROW)){
-    yRaquete += 10;
+    yRaquete += 10
   }
 }
 
 function moveRaquete2(){
-  vYRaquete2 = yBall - yRaquete2 - wRaquete / 2 - 30;
-  yRaquete2 += vYRaquete2;
+  //Mostramos a raquete o yBall e dizemos para segui-lo com uma pequena taxa de erro.
+  vYRaquete2 = yBall - yRaquete2 - wRaquete / 2 - 30; 
+  yRaquete2 += vYRaquete2 + errorshot;
+  errorshotcalculate();
+}
+
+function errorshotcalculate(){
+  if(yourP >= myP){
+    errorshot += 1
+    if(errorshot >= 39){
+      errorshot = 40
+    }
+  } else{
+    errorshot -= 1;
+    if(errorshot <= 35){
+      errorshot = 35
+    }
+  }
 }
 
 function colisionRaquete(){
+  //Colocamos a colisão com a raquete com várias especificações
  if (xBall - raio < xRaquete + wRaquete && yBall - raio < yRaquete + hRaquete && yBall + raio > yRaquete){
     vXBall *= -1;
   }
@@ -112,10 +149,12 @@ function colisionGit(x, y){
   hit = collideRectCircle(x, y, wRaquete, hRaquete, xBall, yBall, dBall);
   if(hit){
     vXBall *= -1;
+    raquetada.play();
   }
 }
 
 function showplacar(){
+  //Editamos o placar para ficar mais bonito
   stroke(255);
   textAlign(CENTER);
   textSize(20);
@@ -130,11 +169,18 @@ function showplacar(){
 }
 
 function pontos(){
+  //Dizemos que se a bola passar das raquetes um ponto será adicionado no placar.
   if(xBall > 590){
     myP += 1;
+    ponto.play();
+    xBall = 300
+    yBall = 200
   }
   if(xBall < 10){
-    yourP += 1;
+    yourP += 1
+    ponto.play()
+    xBall = 300
+    yBall = 200
   }
 }
 

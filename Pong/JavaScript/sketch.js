@@ -149,7 +149,7 @@ function colisionGit(x, y){
   hit = collideRectCircle(x, y, wRaquete, hRaquete, xBall, yBall, dBall);
   if(hit){
     vXBall *= -1;
-    raquetada.play();
+    raquetada.play(); //Tocar a musica na variavel "Raquetada"
   }
 }
 
@@ -172,13 +172,13 @@ function pontos(){
   //Dizemos que se a bola passar das raquetes um ponto será adicionado no placar.
   if(xBall > 590){
     myP += 1;
-    ponto.play();
+    ponto.play(); //Tocar a musica na variavel "Ponto"
     xBall = 300
     yBall = 200
   }
   if(xBall < 10){
     yourP += 1
-    ponto.play()
+    ponto.play() //Tocar a musica na variavel "Ponto"
     xBall = 300
     yBall = 200
   }

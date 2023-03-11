@@ -1,38 +1,27 @@
-//Váriaveis Carro1
-xCar = 1400;
-yCar = 60;
-vCar = 4;
-
-//Váriaveis Carro2
-xCar2 = 1400;
-yCar2 = 155;
-vCar2 = 6;
-
-//Váriaveis Carro3
-xCar3 = 1400;
-yCar3= 245;
-vCar3 = 8;
+let xCars = [1400, 1400, 1400]; //Lista de possiveis valores
+let yCars = [60, 155, 245];
+let vCars = [4, 6, 8];
 
 function showCarro(){
-    image(carro1, xCar, yCar, 70, 60)
-    image(carro2, xCar2, yCar2, 70, 60)
-    image(carro3, xCar3, yCar3, 70, 60)
+  for(let i = 0; i < imgCarros.length; i += 1){ //Linha de repetição onde i = indice, irá aumentar até o numero de imagens carros que existem
+    image(imgCarros[i], xCars[i], yCars[i], 70, 60)
   }
+}
   
-  function moveCarro(){
-    xCar -= vCar;
-    xCar2 -= vCar2;
-    xCar3 -= vCar3;
+function moveCarro(){
+  for(let i = 0; i < imgCarros.length; i +=1){
+    xCars[i] -= vCars[i];
   }
+}
 
-  function loopCar(){
-    if(xCar < -70){
-        xCar = 1400;
-    }
-    if(xCar2 < -70){
-        xCar2 = 1400;
-    }
-    if(xCar3 < -70){
-        xCar3 = 1400;
+function loopCar(){
+  for(let i = 0; i < imgCarros.length; i +=1){
+    if(verifyCar(xCars[i])){ //Recebe o valor, caso seja verdadeiro executa o comando
+      xCars[i] = 1400;
     }
   }
+}
+
+function verifyCar(xCars){ //Retorna o resultado se o carro está ou não fora da tela
+  return xCars < -70
+}

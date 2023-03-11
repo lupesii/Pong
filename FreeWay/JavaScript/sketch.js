@@ -5,6 +5,8 @@ function setup() {
 function draw() {
   background(estrada);
   showAtor();
+  verifyColision();
+  colision();
   showCarro();
   moveAtor();
   moveCarro();

@@ -1,6 +1,8 @@
 let xCars = [1400, 1400, 1400]; //Lista de possiveis valores
 let yCars = [60, 155, 245];
 let vCars = [4, 6, 8];
+let wCars = 70;
+let hCars = 60;
 
 function showCarro(){
   for(let i = 0; i < imgCarros.length; i += 1){ //Linha de repetição onde i = indice, irá aumentar até o numero de imagens carros que existem

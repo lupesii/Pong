@@ -8,5 +8,6 @@ function draw() {
   showCarro();
   moveAtor();
   moveCarro();
+  loopCar();
 }
 

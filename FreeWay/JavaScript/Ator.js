@@ -19,14 +19,14 @@ function moveAtor(){
 
 function verifyColision(){
   //Criado uma repetição para analisar o x e y de todos os carros, caso um deles encoste em nosso ator, ele voltará a posição inicial
-  for(let i = 0; i < imgCarros.length; i += 1){
+  for(let i = 0; i < imgCarros.length; i++){
     hit = collideRectCircle(xCars[i], yCars[i], wCars, hCars, xAtor, yAtor, 40);
     if(hit){
-      yAtor = 590;
+      colision();
     }
   }
 }
 
 function colision(){
-  
+  yAtor = 590;
 }

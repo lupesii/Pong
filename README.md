@@ -1,4 +1,4 @@
-# FreeWay
+# Pong
 
 Recriação do jogo "Pong" lançado em 1972 desenvolvido pela a Atari, o código inteiro está feito em JavaScript, HTML5 e CSS3.
 

@@ -6,7 +6,7 @@ Recriação do jogo "Pong" lançado em 1972 desenvolvido pela a Atari, o código
 | -------------  | --- |
 | :sparkles: Nome        | **Pong**
 | :label: Tecnologias | JavaScript, HTML5, CSS3
-| :rocket: URL | [Jogo Pong](https://editor.p5js.org/lupesii/full/so-Fqgss8)
+| :rocket: URL | [Jogo Pong](https://pong-lupesi.vercel.app/)
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
 ![pong](https://user-images.githubusercontent.com/51518452/230785454-662d1c54-df08-466e-94a4-ca418d7acdfb.jpeg#vitrinedev)
@@ -29,4 +29,4 @@ Tentamos manter a originalidade do jogo original, porém há algumas diferenças
 
 ### Teste o jogo
 
-Caso queira testar ou até mesmo jogar o jogo, aqui está o link, [Pong](https://editor.p5js.org/lupesii/full/so-Fqgss8)
+Caso queira testar ou até mesmo jogar o jogo, aqui está o link, [Pong](https://pong-lupesi.vercel.app/)

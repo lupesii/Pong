@@ -2,8 +2,17 @@ html, body {
     margin-top: 10px;
     padding: 0;
   }
-  canvas {
+canvas {
     display: block;
     margin: auto;
-  }
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1em;
+}
   

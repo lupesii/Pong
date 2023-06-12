@@ -6,7 +6,7 @@ Recriação do jogo "Pong" lançado em 1972 desenvolvido pela a Atari, o código
 | -------------  | --- |
 | :sparkles: Nome        | **Pong**
 | :label: Tecnologias | JavaScript, HTML5, CSS3
-| :rocket: URL | [Jogo Pong](https://github.com/lupesii/Pong)
+| :rocket: URL | https://github.com/lupesii/Pong
 | :fire: Desafio     |
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
